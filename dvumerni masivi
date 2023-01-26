@@ -1,0 +1,48 @@
+import java.util.Scanner;
+public class dvumerniAmasivi {
+	public static void input (int [][]matrix) {
+		 Scanner sc = new Scanner(System.in);
+		 for(int i=0;i<matrix.length;i++) {
+		 for(int j=0;j<matrix[i].length;j++) {
+		 System.out.print("Enter"+"("+i+";"+j+")"+" : ");
+		 matrix [i][j]=sc.nextInt();}
+		 System.out.println();}}
+		 
+		 public static void output (int [][]matrix) {
+		 //Scanner sc = new Scanner(System.in);
+		 for(int i=0;i<matrix.length;i++) {
+		 for(int j=0;j<matrix[i].length;j++) {
+		  System.out.print("n "+"("+i+";"+j+")"+" e "+matrix[i][j]+"; ");}
+		 System.out.println();}}
+		 
+	
+		 
+		 public static void average(int [][]matrix) {
+			 int br=0,sum=0;
+			 for(int i=0;i<matrix.length;i++){
+				 for(int j=0;j<matrix[i].length;j++){
+					 if (matrix [i][j]>0) {br++;sum+=matrix [i][j];}}}
+			 System.out.println("Srednoaretmetichno na pol. chisla: "+sum/br);
+		 }
+		 
+		 	 public static void sbor(int [][]matrix) {
+		 int max=matrix[0][0],min=matrix[0][0];
+		 for(int i=0;i<matrix.length;i++){
+		 for(int j=0;j<matrix[i].length;j++){
+		 if (matrix [i][j]>max)max=matrix [i][j];
+		 if (matrix [i][j]<min)min=matrix[i][j];}}
+		  System.out.println("Sbora na min i max e " +(max+min));}
+      
+      	 	 
+	     public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 Scanner sc = new Scanner(System.in);
+		 int rows=sc.nextInt();
+		 int cols=sc.nextInt();
+		 int [][]matrix=new int[rows][cols];
+		 input (matrix);
+		 output(matrix);
+		 average(matrix);
+		 sbor(matrix);
+	}
+	}
