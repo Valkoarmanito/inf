@@ -1,0 +1,171 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JRadioButton;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class questions extends JFrame {
+
+	private JPanel contentPane;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					questions frame = new questions();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public questions() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 539, 378);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("1. Кога е роден Левски?");
+		lblNewLabel.setBounds(10, 11, 414, 27);
+		contentPane.add(lblNewLabel);
+		
+		JRadioButton rdbtnNewRadioButton = new JRadioButton("1837");
+		rdbtnNewRadioButton.setBounds(10, 35, 109, 23);
+		contentPane.add(rdbtnNewRadioButton);
+		
+		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("1800");
+		rdbtnNewRadioButton_1.setBounds(129, 35, 109, 23);
+		contentPane.add(rdbtnNewRadioButton_1);
+		
+		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("1873");
+		rdbtnNewRadioButton_2.setBounds(250, 35, 109, 23);
+		contentPane.add(rdbtnNewRadioButton_2);
+		
+		JLabel lblNewLabel_1 = new JLabel("2. Прякорът на Левски?");
+		lblNewLabel_1.setBounds(10, 65, 414, 14);
+		contentPane.add(lblNewLabel_1);
+		
+		JRadioButton rdbtnNewRadioButton_3 = new JRadioButton("Освободителят");
+		rdbtnNewRadioButton_3.setBounds(6, 86, 153, 23);
+		contentPane.add(rdbtnNewRadioButton_3);
+		
+		JRadioButton rdbtnNewRadioButton_4 = new JRadioButton("Апостолът");
+		rdbtnNewRadioButton_4.setBounds(161, 86, 109, 23);
+		contentPane.add(rdbtnNewRadioButton_4);
+		
+		JRadioButton rdbtnNewRadioButton_5 = new JRadioButton("Железният човек");
+		rdbtnNewRadioButton_5.setBounds(286, 86, 138, 23);
+		contentPane.add(rdbtnNewRadioButton_5);
+		
+		JLabel lblNewLabel_2 = new JLabel("3. От коя държава Левски търси помощ за революция в България?");
+		lblNewLabel_2.setBounds(10, 116, 408, 23);
+		contentPane.add(lblNewLabel_2);
+		
+		JRadioButton rdbtnNewRadioButton_6 = new JRadioButton("Русия");
+		rdbtnNewRadioButton_6.setBounds(10, 139, 109, 23);
+		contentPane.add(rdbtnNewRadioButton_6);
+		
+		JRadioButton rdbtnNewRadioButton_7 = new JRadioButton("Сърбия");
+		rdbtnNewRadioButton_7.setBounds(129, 139, 109, 23);
+		contentPane.add(rdbtnNewRadioButton_7);
+		
+		JRadioButton rdbtnNewRadioButton_8 = new JRadioButton("Румъния");
+		rdbtnNewRadioButton_8.setBounds(250, 139, 109, 23);
+		contentPane.add(rdbtnNewRadioButton_8);
+		
+		JLabel lblNewLabel_3 = new JLabel("4. През коя година Левски повежда Априлското въстание?");
+		lblNewLabel_3.setBounds(10, 169, 408, 14);
+		contentPane.add(lblNewLabel_3);
+		
+		JRadioButton rdbtnNewRadioButton_9 = new JRadioButton("1864");
+		rdbtnNewRadioButton_9.setBounds(10, 190, 109, 23);
+		contentPane.add(rdbtnNewRadioButton_9);
+		
+		JRadioButton rdbtnNewRadioButton_10 = new JRadioButton("1876");
+		rdbtnNewRadioButton_10.setBounds(129, 190, 109, 23);
+		contentPane.add(rdbtnNewRadioButton_10);
+		
+		JRadioButton rdbtnNewRadioButton_11 = new JRadioButton("1872");
+		rdbtnNewRadioButton_11.setBounds(250, 190, 109, 23);
+		contentPane.add(rdbtnNewRadioButton_11);
+		
+		JLabel lblNewLabel_4 = new JLabel("5. Кой от градовете не е бил революционерски окръг?");
+		lblNewLabel_4.setBounds(10, 220, 421, 14);
+		contentPane.add(lblNewLabel_4);
+		
+		JRadioButton rdbtnNewRadioButton_12 = new JRadioButton("София");
+		rdbtnNewRadioButton_12.setBounds(10, 241, 109, 23);
+		contentPane.add(rdbtnNewRadioButton_12);
+		
+		JRadioButton rdbtnNewRadioButton_13 = new JRadioButton("Велико Търново");
+		rdbtnNewRadioButton_13.setBounds(129, 241, 109, 23);
+		contentPane.add(rdbtnNewRadioButton_13);
+		
+		JRadioButton rdbtnNewRadioButton_14 = new JRadioButton("Ловеч");
+		rdbtnNewRadioButton_14.setBounds(250, 241, 109, 23);
+		contentPane.add(rdbtnNewRadioButton_14);
+		
+		JLabel lblNewLabel_5 = new JLabel("6. Как е умрял Левски?");
+		lblNewLabel_5.setBounds(10, 271, 414, 14);
+		contentPane.add(lblNewLabel_5);
+		
+		JRadioButton rdbtnNewRadioButton_15 = new JRadioButton("Бил е обесен.");
+		buttonGroup.add(rdbtnNewRadioButton_15);
+		rdbtnNewRadioButton_15.setBounds(279, 292, 109, 23);
+		contentPane.add(rdbtnNewRadioButton_15);
+		
+		JRadioButton rdbtnNewRadioButton_16 = new JRadioButton("Бил е убит.");
+		buttonGroup.add(rdbtnNewRadioButton_16);
+		rdbtnNewRadioButton_16.setBounds(168, 292, 109, 23);
+		contentPane.add(rdbtnNewRadioButton_16);
+		
+		JRadioButton rdbtnNewRadioButton_17 = new JRadioButton("Жълтата гостенка");
+		buttonGroup.add(rdbtnNewRadioButton_17);
+		rdbtnNewRadioButton_17.setBounds(10, 292, 156, 23);
+		contentPane.add(rdbtnNewRadioButton_17);
+		
+		JLabel l6 = new JLabel("Оценка: ");
+		l6.setBounds(365, 220, 148, 14);
+		contentPane.add(l6);
+		
+		JButton btnNewButton = new JButton("Предай");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int a = 0;
+				if (rdbtnNewRadioButton.isSelected())a++;
+				if (rdbtnNewRadioButton_4.isSelected())a++;
+				if (rdbtnNewRadioButton_6.isSelected())a++;
+				if (rdbtnNewRadioButton_9.isSelected())a++;
+				if (rdbtnNewRadioButton_12.isSelected())a++;
+				if (rdbtnNewRadioButton_15.isSelected())a++;
+				String c= Integer.toString(a);;
+				l6.setText("Оценката Ви е: "+c);
+			}
+			
+		});
+		btnNewButton.setBounds(365, 194, 89, 23);
+		contentPane.add(btnNewButton);
+		
+		
+		
+		
+	}
+}
