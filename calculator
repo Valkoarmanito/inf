@@ -1,0 +1,214 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import javax.swing.JTextField;
+import java.awt.Color;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Toolkit;
+
+public class calculator extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField t1;
+	private JTextField t2;
+  
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					calculator frame = new calculator();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public calculator() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Valentin\\Downloads\\Valent_G._modern_calculator_9b87a265-ec5b-4d37-a2a2-5aece90ca1b6.png"));
+		setBackground(new Color(192, 192, 192));
+		setForeground(Color.DARK_GRAY);
+		setTitle("\u041F\u0440\u043E\u0441\u0442 \u043A\u0430\u043B\u043A\u0443\u043B\u0430\u0442\u043E\u0440");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(0, 0, 255));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel l1 = new JLabel("A:");
+		l1.setForeground(new Color(0, 255, 0));
+		l1.setHorizontalAlignment(SwingConstants.RIGHT);
+		l1.setBounds(25, 30, 71, 29);
+		contentPane.add(l1);
+    t1 = new JTextField();
+		t1.setBackground(new Color(169, 169, 169));
+		t1.setBounds(96, 34, 86, 20);
+		contentPane.add(t1);
+		t1.setColumns(10);
+		
+		JLabel l2 = new JLabel("B:");
+		l2.setForeground(new Color(127, 255, 0));
+		l2.setHorizontalAlignment(SwingConstants.RIGHT);
+		l2.setBounds(192, 30, 71, 29);
+		contentPane.add(l2);
+		
+		t2 = new JTextField();
+		t2.setBackground(new Color(128, 128, 128));
+		t2.setColumns(10);
+		t2.setBounds(263, 34, 86, 20);
+		contentPane.add(t2);
+		
+		JLabel l3 = new JLabel("\u0420\u0415\u0417\u0423\u041B\u0422\u0410\u0422:");
+		l3.setHorizontalAlignment(SwingConstants.RIGHT);
+		l3.setBounds(75, 175, 86, 46);
+		contentPane.add(l3);
+		
+		JLabel l4 = new JLabel("");
+		l4.setBounds(165, 175, 174, 46);
+		contentPane.add(l4);
+		
+		JButton b1 = new JButton("A + B");
+		b1.setBackground(Color.RED);
+		b1.setForeground(Color.white);
+		b1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				double a = Double.parseDouble(t1.getText());
+				double b = Double.parseDouble(t2.getText());
+				 l4.setText(Double.toString(a+b));
+			}
+		});
+		b1.setBounds(23, 82, 89, 23);
+		contentPane.add(b1);
+		
+		JButton b5 = new JButton("A % B");
+		b5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				double a = Double.parseDouble(t1.getText());
+				double b = Double.parseDouble(t2.getText());
+				 l4.setText(Double.toString(a%b));
+         }
+		});
+		b5.setForeground(new Color(220, 20, 60));
+		b5.setBackground(Color.PINK);
+		b5.setBounds(23, 122, 89, 23);
+		contentPane.add(b5);
+		
+		JButton b2 = new JButton("A - B");
+		b2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				double a = Double.parseDouble(t1.getText());
+				double b = Double.parseDouble(t2.getText());
+				 l4.setText(Double.toString(a-b));
+			}
+		});
+		b2.setBackground(Color.BLUE);
+		b2.setForeground(Color.GREEN);
+		b2.setBounds(125, 83, 89, 23);
+		contentPane.add(b2);
+		
+		JButton b3 = new JButton("A * B");
+		b3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				double a = Double.parseDouble(t1.getText());
+				double b = Double.parseDouble(t2.getText());
+				 l4.setText(Double.toString(a*b));
+			}
+		});
+		b3.setForeground(Color.MAGENTA);
+		b3.setBackground(Color.DARK_GRAY);
+		b3.setBounds(226, 83, 89, 23);
+		contentPane.add(b3);
+		
+		JButton b4 = new JButton("A / B");
+		b4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				double a = Double.parseDouble(t1.getText());
+				double b = Double.parseDouble(t2.getText());
+				 l4.setText(Double.toString(a/b));
+			}
+		});
+		b4.setBackground(Color.WHITE);
+		b4.setForeground(Color.RED);
+		b4.setBounds(327, 83, 89, 23);
+		contentPane.add(b4);
+		
+		JButton b6 = new JButton("AVERAGE");
+		b6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				double a = Double.parseDouble(t1.getText());
+				double b = Double.parseDouble(t2.getText());
+				 l4.setText(Double.toString((a+b)/2));
+			}
+		});
+    b6.setForeground(new Color(128, 0, 0));
+		b6.setBackground(new Color(100, 149, 237));
+		b6.setBounds(127, 121, 89, 23);
+		contentPane.add(b6);
+		
+		JButton b7 = new JButton("\u221AA + B");
+		b7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				double a = Double.parseDouble(t1.getText());
+				double b = Double.parseDouble(t2.getText());
+				double r=Math.round(Math.sqrt(a+b));
+				 l4.setText(Double.toString(r));
+			}
+		});
+		b7.setBackground(new Color(220, 220, 220));
+		b7.setForeground(new Color(50, 205, 50));
+		b7.setBounds(226, 122, 89, 23);
+		contentPane.add(b7);
+		
+		JButton b8 = new JButton("\u221AA - \u221AB");
+		b8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				double a = Double.parseDouble(t1.getText());
+				double b = Double.parseDouble(t2.getText());
+				double r=Math.round(Math.sqrt(a)-Math.sqrt(b));
+				 l4.setText(Double.toString(r));
+			}
+		});
+		b8.setForeground(new Color(255, 0, 0));
+		b8.setBackground(new Color(34, 139, 34));
+		b8.setBounds(327, 122, 89, 23);
+		contentPane.add(b8);
+		
+		JButton b9 = new JButton("\u0418\u0437\u0447\u0438\u0441\u0442\u0438");
+		b9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				t1.setText(" ");
+				t2.setText(" ");
+				l4.setText(" ");
+			}
+		});
+		b9.setBounds(25, 227, 89, 23);
+		contentPane.add(b9);
+		
+		JButton b10 = new JButton("\u0417\u0430\u0442\u0432\u043E\u0440\u0438");
+		b10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
+			}
+		});
+		b10.setBounds(327, 227, 89, 23);
+		contentPane.add(b10);
+		
+		
+	}
+}
