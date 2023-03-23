@@ -1,0 +1,121 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.Toolkit;
+
+public class division extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField t1;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					division frame = new division();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public division() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Valentin\\OneDrive - Министерство на образованието и науката\\Desktop\\640px-Font_Awesome_5_solid_divide.svg.png"));
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.YELLOW);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel l1 = new JLabel("\u0412\u044A\u0432\u0435\u0434\u0435\u0442\u0435 \u0446\u044F\u043B\u043E \u0447\u0438\u0441\u043B\u043E:");
+		l1.setForeground(Color.BLUE);
+		l1.setBackground(Color.ORANGE);
+		l1.setBounds(24, 26, 153, 31);
+		contentPane.add(l1);
+		
+		t1 = new JTextField();
+		t1.setBackground(Color.LIGHT_GRAY);
+		t1.setBounds(187, 31, 73, 20);
+		contentPane.add(t1);
+		t1.setColumns(10);
+    JLabel l2 = new JLabel("\u0427\u0438\u0441\u043B\u0430\u0442\u0430, \u0434\u0435\u043B\u044F\u0449\u0438 \u0441\u0435 \u043D\u0430 7 \u0431\u0435\u0437 \u043E\u0441\u0442\u0430\u0442\u044A\u043A, \u0441\u0430:");
+		l2.setForeground(Color.MAGENTA);
+		l2.setBounds(24, 63, 400, 31);
+		contentPane.add(l2);
+		
+		JLabel l3 = new JLabel("\u0421\u0443\u043C\u0430\u0442\u0430 \u043D\u0430 \u0447\u0438\u0441\u043B\u0430\u0442\u0430 \u0435:");
+		l3.setForeground(Color.BLUE);
+		l3.setBounds(24, 104, 387, 31);
+		contentPane.add(l3);
+		
+		JLabel l4 = new JLabel("\u041F\u0440\u043E\u0438\u0437\u0432\u0435\u0434\u0435\u043D\u0438\u0435\u0442\u043E \u043D\u0430 \u0447\u0438\u0441\u043B\u0430\u0442\u0430 \u0435:");
+		l4.setForeground(Color.MAGENTA);
+		l4.setBounds(24, 148, 364, 31);
+		contentPane.add(l4);
+		
+		JButton b1 = new JButton("\u041F\u0440\u0435\u0441\u043C\u0435\u0442\u043D\u0438");
+		b1.setBackground(Color.DARK_GRAY);
+		b1.setForeground(Color.CYAN);
+		b1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int N=Integer.parseInt(t1.getText());
+				 int s = 0;
+			     int pr = 1;
+			     String num = "";
+			     for (int i = 1; i <= N; i++) {
+			     if (i != 0 && i % 7 == 0) {
+			     s += i;
+			     pr *= i;
+			     num += i + " ";}}
+			     l2.setText("Числата, делящи се на 7 без остатък, са: "+num);
+			     l3.setText("Сумата на числата е: "+s);
+			     l4.setText("Произведението на числата е: "+pr);
+			}});
+		b1.setBounds(32, 212, 115, 23);
+		contentPane.add(b1);
+		
+		JButton b2 = new JButton("\u0418\u0437\u0447\u0438\u0441\u0442\u0438");
+		b2.setForeground(Color.GREEN);
+		b2.setBackground(Color.CYAN);
+		b2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				t1.setText(" ");
+				l2.setText("Числата, делящи се на 7 без остатък, са: ");
+				l3.setText("Сумата на числата е: ");
+				l4.setText("Произведението на числата е: ");
+			}
+		});
+		b2.setBounds(171, 212, 89, 23);
+		contentPane.add(b2);
+		
+		JButton b3 = new JButton("\u0418\u0437\u0445\u043E\u0434");
+		b3.setBackground(Color.PINK);
+		b3.setForeground(Color.RED);
+		b3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
+			}
+		});
+		b3.setBounds(303, 212, 89, 23);
+		contentPane.add(b3);
+	}
+}
