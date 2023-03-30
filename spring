@@ -1,0 +1,124 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.Toolkit;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+
+public class Prolet1 extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Prolet1 frame = new Prolet1();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Prolet1() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Valentin\\OneDrive - Министерство на образованието и науката\\Desktop\\960-540-prolet.jpg"));
+		setTitle("\u041F\u0440\u043E\u043B\u0435\u0442");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 804, 471);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel l1 = new JLabel("New label");
+		l1.setIcon(new ImageIcon("C:\\Users\\Valentin\\OneDrive - \u041C\u0438\u043D\u0438\u0441\u0442\u0435\u0440\u0441\u0442\u0432\u043E \u043D\u0430 \u043E\u0431\u0440\u0430\u0437\u043E\u0432\u0430\u043D\u0438\u0435\u0442\u043E \u0438 \u043D\u0430\u0443\u043A\u0430\u0442\u0430\\Desktop\\960-540-prolet.jpg"));
+		l1.setBounds(47, 21, 706, 291);
+		setVisible(false);
+		contentPane.add(l1);
+    
+    JLabel l2 = new JLabel("New label");
+		l2.setIcon(new ImageIcon("C:\\Users\\Valentin\\OneDrive - \u041C\u0438\u043D\u0438\u0441\u0442\u0435\u0440\u0441\u0442\u0432\u043E \u043D\u0430 \u043E\u0431\u0440\u0430\u0437\u043E\u0432\u0430\u043D\u0438\u0435\u0442\u043E \u0438 \u043D\u0430\u0443\u043A\u0430\u0442\u0430\\Desktop\\prolet.png"));
+		l2.setBounds(47, 21, 706, 291);
+		setVisible(false);
+		contentPane.add(l2);
+		
+		JLabel l3 = new JLabel("New label");
+		l3.setIcon(new ImageIcon("C:\\Users\\Valentin\\OneDrive - \u041C\u0438\u043D\u0438\u0441\u0442\u0435\u0440\u0441\u0442\u0432\u043E \u043D\u0430 \u043E\u0431\u0440\u0430\u0437\u043E\u0432\u0430\u043D\u0438\u0435\u0442\u043E \u0438 \u043D\u0430\u0443\u043A\u0430\u0442\u0430\\Desktop\\r-orig-orig-prolet.jpg"));
+		l3.setBounds(47, 21, 706, 291);
+		setVisible(false);
+		contentPane.add(l3);
+		
+		JLabel l4 = new JLabel("New label");
+		l4.setIcon(new ImageIcon("C:\\Users\\Valentin\\OneDrive - \u041C\u0438\u043D\u0438\u0441\u0442\u0435\u0440\u0441\u0442\u0432\u043E \u043D\u0430 \u043E\u0431\u0440\u0430\u0437\u043E\u0432\u0430\u043D\u0438\u0435\u0442\u043E \u0438 \u043D\u0430\u0443\u043A\u0430\u0442\u0430\\Desktop\\ki-4.jpg"));
+		l4.setBounds(47, 21, 706, 291);
+		setVisible(false);
+		contentPane.add(l4);
+		
+		JLabel l5 = new JLabel("");
+		l5.setHorizontalAlignment(SwingConstants.CENTER);
+		l5.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		l5.setForeground(Color.CYAN);
+		l5.setBackground(Color.LIGHT_GRAY);
+		l5.setBounds(95, 323, 604, 38);
+		contentPane.add(l5);
+		
+		JLabel l6 = new JLabel("");
+		l6.setIcon(new ImageIcon("C:\\Users\\Valentin\\Downloads\\rsz_12download.jpg"));
+		l6.setBounds(704, 323, 49, 98);
+		contentPane.add(l6);
+		
+		JLabel l7 = new JLabel("");
+		l7.setIcon(new ImageIcon("C:\\Users\\Valentin\\Downloads\\rsz_1rsz_12download.jpg"));
+		l7.setBounds(47, 323, 55, 98);
+		contentPane.add(l7);
+		
+		JButton b1 = new JButton("\u0420\u0430\u0437\u0431\u044A\u0440\u043A\u0430\u0439 \u0437\u0430 \u0442\u0432\u043E\u044F\u0442\u0430 \u0434\u043D\u0435\u0432\u043D\u0430 \u0434\u043E\u0437\u0430 \u043F\u0440\u043E\u043B\u0435\u0442");
+		b1.setBackground(Color.PINK);
+		b1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int min=0;
+			    int max=3;
+				int a=(int)(Math.random()*(max-min+1)+min);
+				if(a==0) {l5.setText(" ");l1.setVisible(true);l5.setText("Пролетта е времето за планове и проекти.");l2.setVisible(false);l3.setVisible(false);l4.setVisible(false);}
+				if(a==1) {l5.setText(" ");l2.setVisible(true);l5.setText("Можете да изрежете всички цветя, но не може да възпрете пролетта да дойде.");l1.setVisible(false);l3.setVisible(false);l4.setVisible(false);}
+				if(a==2) {l5.setText(" ");l3.setVisible(true);l5.setText("Колко странно е това! / да бъдеш жив / под цъфнали череши.");l1.setVisible(false);l2.setVisible(false);l4.setVisible(false);}
+				if(a==3) {l5.setText(" ");l4.setVisible(true);l5.setText("Отново е пролет. Земята е като дете, което знае поеми наизуст.");l1.setVisible(false);l2.setVisible(false);l3.setVisible(false);}
+					
+				}});
+			
+		b1.setBounds(118, 383, 279, 38);
+		contentPane.add(b1);
+		
+		
+		
+		JButton b2 = new JButton("\u0418\u0437\u043B\u0435\u0437, \u043D\u043E \u043F\u044A\u0440\u0432\u043E \u0441\u0435 \u0443\u0441\u043C\u0438\u0445\u043D\u0438");
+		b2.setBackground(Color.PINK);
+		b2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
+			}
+		});
+		b2.setBounds(447, 383, 223, 38);
+		contentPane.add(b2);
+		
+		
+	}
+}
