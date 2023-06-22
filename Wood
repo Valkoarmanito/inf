@@ -1,0 +1,279 @@
+package sd;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
+import javax.swing.ButtonGroup;
+
+public class wod extends JFrame {
+
+	private JPanel contentPane;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private final ButtonGroup buttonGroup_1 = new ButtonGroup();
+	private JTextField t1;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					wod frame = new wod();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public wod() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 811, 471);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(contentPane);
+		
+		JLabel lblNewLabel = new JLabel("\u0414\u044A\u0440\u0432\u043E\u0440\u0435\u0437\u0431\u0430\u0440\u0441\u043A\u043E \u0430\u0442\u0435\u043B\u0438\u0435 \"\u0428\u0438\u043F\u043A\u0430\"");
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 30));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(92, 11, 598, 40);
+		contentPane.add(lblNewLabel);
+		
+		JPanel panel = new JPanel();
+		panel.setBorder(new LineBorder(new Color(0, 0, 0), 6));
+		panel.setBackground(new Color(244, 164, 96));
+		panel.setBounds(10, 76, 233, 343);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblNewLabel_1 = new JLabel("Дървесен материал:");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setBounds(22, 11, 197, 25);
+		panel.add(lblNewLabel_1);
+		
+		JComboBox cb1 = new JComboBox();
+		cb1.setBackground(new Color(255, 165, 0));
+		cb1.setModel(new DefaultComboBoxModel(new String[] {"\u0418\u0417\u0411\u0415\u0420\u0415\u0422\u0415 \u0414\u042A\u0420\u0416\u0410\u0412\u0410", "\u0411\u044A\u043B\u0433\u0430\u0440\u0438\u044F", "\u0424\u0438\u043D\u043B\u0430\u043D\u0434\u0438\u044F", "\u0428\u0432\u0435\u0446\u0438\u044F", "\u0420\u0443\u0441\u0438\u044F", "\u041D\u043E\u0440\u0432\u0435\u0433\u0438\u044F", "\u041A\u0430\u043D\u0430\u0434\u0430"}));
+		cb1.setBounds(16, 47, 203, 25);
+		panel.add(cb1);
+		
+		JRadioButton r1 = new JRadioButton("\u0411\u044F\u043B\u0430 \u0431\u0440\u0435\u0437\u0430");
+		buttonGroup.add(r1);
+		
+		r1.setBounds(63, 105, 109, 23);
+		panel.add(r1);
+		
+		JRadioButton r2 = new JRadioButton("\u0411\u0443\u043A");
+		buttonGroup.add(r2);
+		
+		r2.setBounds(63, 142, 109, 23);
+		panel.add(r2);
+		
+		JRadioButton r3 = new JRadioButton("\u041C\u043E\u0440\u0441\u043A\u0438 \u0431\u043E\u0440");
+		buttonGroup.add(r3);
+		
+		r3.setBounds(63, 179, 109, 23);
+		panel.add(r3);
+		
+		JRadioButton r4 = new JRadioButton("\u0411\u044F\u043B\u0430 \u0441\u0435\u043A\u0432\u043E\u044F");
+		buttonGroup.add(r4);
+		r4.setBounds(63, 217, 109, 23);
+		panel.add(r4);
+		
+		JRadioButton r5 = new JRadioButton("\u0415\u043B\u0430");
+		buttonGroup.add(r5);
+		
+		r5.setBounds(63, 252, 109, 23);
+		panel.add(r5);
+		
+		JRadioButton r6 = new JRadioButton("\u0427\u0435\u0440\u0435\u0448\u0430");
+		buttonGroup.add(r6);
+		
+		r6.setBounds(63, 289, 109, 25);
+		panel.add(r6);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBorder(new LineBorder(new Color(0, 0, 0), 6));
+		panel_1.setBackground(new Color(244, 164, 96));
+		panel_1.setBounds(266, 76, 225, 343);
+		contentPane.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JLabel lblNewLabel_2 = new JLabel("Изработваем продукт:");
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNewLabel_2.setBounds(10, 11, 205, 24);
+		panel_1.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_2_1 = new JLabel("\u0414\u043E\u0441\u0442\u0430\u0432\u043A\u0430:");
+		lblNewLabel_2_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2_1.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_2_1.setBounds(10, 247, 205, 24);
+		panel_1.add(lblNewLabel_2_1);
+		
+		t1 = new JTextField();
+		t1.setBounds(34, 282, 154, 24);
+		panel_1.add(t1);
+		t1.setColumns(10);
+		
+		JRadioButton r7 = new JRadioButton("Къща");
+		buttonGroup_1.add(r7);
+		
+		r7.setBounds(59, 64, 109, 23);
+		panel_1.add(r7);
+		
+		JRadioButton r8 = new JRadioButton("Кухня");
+		buttonGroup_1.add(r8);
+		
+		r8.setBounds(59, 110, 109, 23);
+		panel_1.add(r8);
+		
+		JRadioButton r9 = new JRadioButton("Маса");
+		buttonGroup_1.add(r9);
+		
+		r9.setBounds(59, 155, 109, 23);
+		panel_1.add(r9);
+		
+		JRadioButton r10 = new JRadioButton("Стол");
+		buttonGroup_1.add(r10);
+		
+		r10.setBounds(59, 202, 109, 23);
+		panel_1.add(r10);
+		
+		t1 = new JTextField();
+		t1.setBounds(71, 292, 86, 20);
+		panel_1.add(t1);
+		t1.setColumns(10);
+		
+		JLabel l4 = new JLabel("New label");
+		l4.setIcon(new ImageIcon("C:\\Users\\Valentin\\Downloads\\rsz_171usyb3jezl.jpg"));
+		l4.setBounds(501, 208, 278, 183);
+		contentPane.add(l4);
+		l4.setVisible(false);
+		
+		JLabel l1 = new JLabel("New label");
+		l1.setBounds(501, 208, 278, 183);
+		contentPane.add(l1);
+		l1.setIcon(new ImageIcon("C:\\Users\\Valentin\\Downloads\\rsz_local_maison_100__bois_01_atelier_vincent_hecht_copy.jpg"));
+		l1.setVisible(false);
+		
+		
+		JLabel l3 = new JLabel("New label");
+		l3.setBounds(501, 208, 278, 183);
+		contentPane.add(l3);
+		l3.setIcon(new ImageIcon("C:\\Users\\Valentin\\Downloads\\rsz_learn-how-to-make-a-simple-wooden-table-at-home1.jpg"));
+		l3.setVisible(false);
+		
+		JLabel l2 = new JLabel("New label");
+		l2.setBounds(501, 208, 278, 183);
+		contentPane.add(l2);
+		l2.setIcon(new ImageIcon("C:\\Users\\Valentin\\Downloads\\rsz_1featured-1111111111111111-compressed.jpg"));
+		l2.setVisible(false);
+		
+		JList list = new JList();
+		list.setBackground(new Color(255, 140, 0));
+		list.setBounds(501, 76, 278, 23);
+		contentPane.add(list);
+		
+		JList list1 = new JList();
+		list1.setBackground(new Color(255, 140, 0));
+		list1.setBounds(501, 106, 278, 23);
+		contentPane.add(list1);
+		
+		JList list2 = new JList();
+		list2.setBackground(new Color(255, 140, 0));
+		list2.setBounds(501, 140, 278, 23);
+		contentPane.add(list2);
+		
+		JList list3 = new JList();
+		list3.setBackground(new Color(255, 140, 0));
+		list3.setBounds(501, 174, 278, 23);
+		contentPane.add(list3);
+		
+		DefaultListModel  m = new DefaultListModel();
+		DefaultListModel  n = new DefaultListModel();
+		DefaultListModel  q = new DefaultListModel();
+		DefaultListModel  b = new DefaultListModel();
+		
+		JButton b1 = new JButton("\u0412\u044A\u0432\u0435\u0434\u0438");
+		b1.setFont(new Font("Tahoma", Font.BOLD, 11));
+		b1.setBackground(new Color(255, 140, 0));
+		b1.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent arg0) {
+		        String d, mt = " ", p = " ", t, k=" ",o=" ",a=" ",c,f=" ";
+		        d = (String) cb1.getSelectedItem();
+		        if (r1.isSelected()) mt = "Бяла бреза";
+		        else if (r2.isSelected()) mt = "Бук";
+		        else if (r3.isSelected()) mt = "Морски бор";
+		        else if (r4.isSelected()) mt = "Бяла секвоя";
+		        else if (r5.isSelected()) mt = "Ела";
+		        else if (r6.isSelected()) mt = "Череша";
+		        c=t1.getText();
+		        if (r7.isSelected()) 
+		        {p = "Къща";l1.setVisible(true);l2.setVisible(false);l3.setVisible(false);l4.setVisible(false);}
+		        else if (r8.isSelected()) 
+		        {p = "Кухня";l2.setVisible(true);l1.setVisible(false);l3.setVisible(false);l4.setVisible(false);}
+		        else if (r9.isSelected()) 
+		        {p = "Маса";l3.setVisible(true);l1.setVisible(false);l2.setVisible(false);l4.setVisible(false);}
+		        else if (r10.isSelected())
+		        {p = "Стол";l4.setVisible(true);l1.setVisible(false);l2.setVisible(false);l3.setVisible(false);}
+		        k ="Държава: "+ d;
+		        o ="Материал: "+ mt;
+		        a ="Продукт: "+ p;
+		        f ="Доставка с: "+ c;
+		        
+		        m.addElement(k);
+		        list.setModel(m);
+		        
+		        n.addElement(o);
+		        list1.setModel(n);
+		        
+		        q.addElement(a);
+		        list2.setModel(q);
+		        
+		        b.addElement(f);
+		        list3.setModel(b);
+		    }
+		});
+		b1.setBounds(590, 396, 111, 23);
+		contentPane.add(b1);
+		
+		JButton btnNewButton = new JButton("X");
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
+			}
+		});
+		btnNewButton.setForeground(Color.BLACK);
+		btnNewButton.setBackground(Color.RED);
+		btnNewButton.setBounds(0, 0, 45, 33);
+		contentPane.add(btnNewButton);
+	}
+}
+
