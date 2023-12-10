@@ -1,0 +1,144 @@
+import java.util.Scanner;
+
+abstract class Question {
+    protected String q;
+    protected String a;
+
+    public Question(String q) {
+        this.q = q;
+    }
+    public String getQ() {
+		return q;
+	}
+	public void setQ(String q) {
+		this.q = q;
+	}
+	public abstract void askQuestion();
+
+    public abstract boolean checkQuestion();
+}
+
+class IntegerQuestion extends Question {
+    private int c;
+
+    public IntegerQuestion(String q, int c) {
+        super(q);  
+        this.c=c;}
+
+    public int getC() {
+		return c;
+	}
+
+	public void setC(int c) {
+		this.c = c;
+	}
+
+	@Override
+    public void askQuestion() {
+        System.out.println(q);
+        Scanner scanner = new Scanner(System.in);
+        a = scanner.nextLine();
+    }
+
+    @Override
+    public boolean checkQuestion() {
+        try {
+            int IntA = Integer.parseInt(a);
+            return IntA == c;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+}
+
+class OpenQuestion extends Question {
+    private String c;
+
+    public OpenQuestion(String q, String c) {
+        super(q);
+        this.c = c;
+    }
+    public String getC() {
+		return c;
+	}
+	public void setC(String c) {
+		this.c = c;
+	}
+	@Override
+    public void askQuestion() {
+        System.out.println(q);
+        Scanner scanner = new Scanner(System.in);
+        a = scanner.nextLine();
+    }
+
+	@Override
+	public boolean checkQuestion() {
+    return a.equalsIgnoreCase(c);
+    }
+}
+
+class Test {
+    private Question[] qs;
+    private int nomer;
+
+    public Test() {
+        qs = new Question[10];
+        nomer = 0;
+    }
+
+    public void addQuestion(Question q) {
+        if (nomer < 10) 
+        {
+            qs[nomer++] = q;
+        } 
+        else 
+        {
+            System.out.println("Тестът е изпълнен с мъдри въпроси");
+        }
+    }
+
+    public void performTest() {
+        for (int i = 0; i < nomer; i++) {
+            qs[i].askQuestion();
+        }
+    }
+
+    public int numCorrectAnswers() {
+        int c = 0;
+        for (int i = 0; i < nomer; i++) {
+            if (qs[i].checkQuestion())c++;
+        }
+        return c;
+    }
+
+    public void shuffle() {
+        for (int i = nomer - 1; i > 0; i--) {
+            int n = (int) (Math.random() * (i + 1));
+            Question t = qs[i];
+            qs[i] = qs[n];
+            qs[n] = t;
+        }
+    }
+}
+public class AbstClass
+    {
+
+	public static void main(String[] args) 
+	        {
+		System.setProperty("console.encoding", "UTF-8");
+		        Test test = new Test();
+		        test.addQuestion(new IntegerQuestion("Колко е 10+10/10?", 11));
+		        test.addQuestion(new OpenQuestion("Коя е столицата на Аржентина?", "Буенос Айрес"));
+		        test.addQuestion(new OpenQuestion("Кой е the Goat?", "Лионел Меси"));
+		        test.addQuestion(new OpenQuestion("Кой падна от Астън Вила?", "Арсенал"));
+		        test.addQuestion(new IntegerQuestion("Колко е корен квадратен от 16?",4));
+		        test.addQuestion(new IntegerQuestion("Колко е корен трети", 27));
+		        test.addQuestion(new IntegerQuestion("Колко страни има хексагона", 6));
+		        test.addQuestion(new IntegerQuestion("Колко е общата сума от ъглите в хексагона", 720));
+		        test.addQuestion(new OpenQuestion("Име на програмен език?", "Java"));
+		        test.addQuestion(new OpenQuestion("Име на старазагорски управник", "Петко Славейков"));
+		        test.shuffle();
+		        test.performTest();
+		        System.out.println("Брой верни отговори: " + test.numCorrectAnswers());
+		    }
+	}
